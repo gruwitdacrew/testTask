@@ -1,0 +1,42 @@
+.container {
+  width: fit-content;
+  height: fit-content;
+
+  border: 3px solid green;
+}
+
+
+.section {
+  width: 100%;
+  border-color: solid green;
+}
+
+
+.node {
+  margin: 10px;
+  width: 100px;
+}
+
+
+span:hover {
+  cursor: pointer;
+  background-color: lightgrey;
+}
+
+
+.btn {
+  border-color: green;
+  background-color: white;
+  margin: 10px;
+}
+
+
+.text {
+  text-align: center;
+  color:green;
+  font-size: x-large;
+}
+
+input[type="text"] {
+  display: none;
+}
