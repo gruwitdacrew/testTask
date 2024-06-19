@@ -11,6 +11,18 @@ jobs:
       uses: actions/checkout@v2
     
     - name: Run Semgrep security scan
-      uses: docker://returntocorp/semgrep
-      with:
-        args: semgrep --config rules.yaml tree/src/App.js
+      run: |
+        semgrep --config rules.yaml tree/src/App.js
+        export EXIT_CODE=$?
+    
+    - name: Abort commit if Semgrep found issues
+      if: ${{ env.EXIT_CODE == 1 }}
+      run: echo "Semgrep found issues. Aborting commit." && exit 1
+
+    - name: Commit code
+      run: |
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git add .
+        git commit -m "Auto commit"
+        git push
