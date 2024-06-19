@@ -10,6 +10,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     
+    - name: Install Semgrep
+      uses: returntocorp/semgrep-action@v1
+      with:
+        version: latest  # Установите последнюю версию Semgrep
+    
     - name: Run Semgrep security scan
       run: |
         semgrep --config rules.yaml tree/src/App.js
