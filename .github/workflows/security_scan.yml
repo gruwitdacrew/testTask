@@ -13,4 +13,4 @@ jobs:
     - name: Run Semgrep security scan
       uses: docker://returntocorp/semgrep
       with:
-        args: semgrep --config rules.yaml /tree/src/App.js
+        args: semgrep --config rules.yaml tree/src/App.js
