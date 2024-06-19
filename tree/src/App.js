@@ -35,11 +35,9 @@ function App() {
     {
       document.getElementById(selectedIndex).querySelector('span').style.display = 'none';
       document.getElementById(selectedIndex).querySelector('input').style.display = 'block';
-      document.getElementById('edit').innerHTML = "OK";
     }
     else {
       editNode(selectedIndex, document.getElementById(selectedIndex).querySelector('input').value);
-      document.getElementById('edit').innerHTML = "Edit";
       document.getElementById(selectedIndex).querySelector('span').style.display = 'block';
       document.getElementById(selectedIndex).querySelector('input').style.display = 'none';
     }
