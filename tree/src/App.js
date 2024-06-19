@@ -31,7 +31,7 @@ function App() {
 
   const editInput = (selectedIndex) => {
     if (selectedIndex == null) alert("Выберите элемент");
-    else if (document.getElementById('edit').innerHTML !== "OK")
+    else if (true)
     {
       document.getElementById(selectedIndex).querySelector('span').style.display = 'none';
       document.getElementById(selectedIndex).querySelector('input').style.display = 'block';
