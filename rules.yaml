@@ -1,0 +1,15 @@
+rules:
+  - id: avoid-button-text-state-check
+    patterns:
+      - pattern-regex: document.getElementById(.*).innerHTML\s(!==|===|==|!=)
+    message: "Avoid checking application state based on button text"
+    severity: ERROR
+    languages:
+      - javascript
+      
+  - id: detect-innerhtml-vulnerable
+    languages:
+      - javascript
+    severity: ERROR
+    message: Avoid using innerHtml as it may lead to potential XSS vulnerabilities
+    pattern-regex: document.getElementById(.*).innerHTML\s=
