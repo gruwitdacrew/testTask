@@ -1,0 +1,16 @@
+name: Security Scan
+
+on: [push]
+
+jobs:
+  security_scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Run Semgrep security scan
+      uses: docker://returntocorp/semgrep
+      with:
+        args: semgrep --config rules.yaml /tree/src/App.js
